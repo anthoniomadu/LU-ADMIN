@@ -21,9 +21,9 @@ import { withRouter, Route } from 'react-router-dom';
 import simpleRestProvider from 'ra-data-simple-rest';
 import MyPage from './MyPage';
 
-const dataProvider = myDataProvider('http://localhost:1337/users');
+// const dataProvider = myDataProvider('http://localhost:1337/users');
 
-// const dataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
+const dataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
 // const App = () => <Admin dataProvider={dataProvider} />;
 const App = () => (
 //    <Admin customRoutes={customRoutes} loginPage={MyLoginPage} dashboard={Dashboard} logoutButton={MyLogoutButton} dataProvider={dataProvider} authProvider={authProvider}>
