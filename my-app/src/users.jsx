@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Datagrid, TextField, EmailField } from 'react-admin';
 import { Filter, TextInput,TabbedForm, FormTab, ShowButton, EditButton, Edit, SimpleForm, Create  } from 'react-admin';
-
+import MyUrlField from './MyUrlField';
 
 
 
@@ -42,7 +42,19 @@ const UserFilter = ({ permissions, ...props }) =>
 </Filter>;
 
 export const UserList = ({ permissions, ...props }) =>
-<List
+
+<List {...props}>
+        <Datagrid rowClick="edit">
+            <TextField source="id" />
+            <TextField source="name" />
+            <TextField source="username" />
+            <EmailField source="email" />
+            <TextField source="phone" />
+            <MyUrlField source="website" />
+            <TextField source="company.name" />
+        </Datagrid>
+    </List>
+{/* <List
     {...props}
     filters={props => <UserFilter permissions={permissions} {...props} />}
 >
@@ -53,4 +65,4 @@ export const UserList = ({ permissions, ...props }) =>
         {permissions === 'admin' && <EditButton />}
         <ShowButton />
     </Datagrid>
-</List>;
+</List>; */}
